@@ -1,5 +1,5 @@
 //
-//  ResolverTimingTEsts.swift
+//  ResolverTimingTests.swift
 //  ResolverTests
 //
 //  Created by Jon Lazar on 10/31/19.
