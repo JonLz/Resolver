@@ -13,6 +13,20 @@ extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         register { XYZSessionService() }
         register { XYZService( optional() ) }
+        register { RegisteredTimerService() }.implements(TimingProtocol.self)
+        register { TimerConsumer( optional() ) }
+    }
+}
+
+protocol TimingProtocol { }
+
+class RegisteredTimerService: TimingProtocol { }
+
+class TimerConsumer {
+    let timer: TimingProtocol?
+
+    init(_ timer: TimingProtocol?) {
+        self.timer = timer
     }
 }
 
